@@ -1,0 +1,9 @@
+version: 1
+terminal:
+  fontSize: 14
+  font: "JetBrainsMono Nerd Font"
+colorScheme:
+  name: "Dracula"
+  foreground: "#f8f8f2"
+  background: "#282a36"
+

@@ -7,22 +7,17 @@ brew "fzf"
 brew "ripgrep"
 brew "bat"
 brew "htop"
-brew "lazygit"
-brew "lazysql"
-brew "awscli"
 brew "jq"
 brew "yq"
-brew "gh"
-brew "delta"
+# brew "gh"
 brew "tmux"
 brew "stow"
 brew "neovim"
-brew "kubectl"       # Kubernetes CLI
-brew "tailscale"     # Secure mesh VPN for homelab and remote access
+# brew "kubectl"
 
 # Languages n stuff
 brew "python"
-brew "pipx"
+brew "uv"
 brew "node"
 brew "nvm"
 
@@ -33,18 +28,14 @@ brew "findutils"
 brew "gawk"
 
 # GUI Applications
-cask "iterm2"
+cask "tabby"
 cask "visual-studio-code"
 cask "raycast"
 cask "docker"
-cask "ghostty"
 cask "aerospace"
 cask "caffeine"
-cask "discord"
-cask "chatgpt"
 cask "shottr"
-cask "caffeine" 
-# cash "zoom" - I don't want to install this by default
+cask "datagrip"
 
 # Fonts
 cask "font-jetbrains-mono-nerd-font"

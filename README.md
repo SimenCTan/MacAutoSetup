@@ -1,62 +1,30 @@
 # 🛠️ MacAutoSetup
 
-A lean, modern development environment for macOS that brings the Linux tiling window manager experience to Mac — with minimal fuss.
+一个精简、现代的 macOS 开发环境，将 Linux 平铺式窗口管理器的体验带到 Mac 上 —— 极其省心。
 
-## ✨ Core Features
+## ✨ 核心功能
 
-- 🚀 Zsh with Zap — plugin manager for a clean, fast shell
-- 🧠 Raycast — fast launcher & automation
-- 🪟 Aerospace — tiling window management (like i3, for Mac)
-- 🧑‍💻 Astronvim — full-featured, sane Neovim IDE config
-- 🧘 Minimal Vim config — if you want to keep it light
-- 🖋️ GNU Stow — simple, modular dotfile management
-- 🧰 Essential GNU utilities — sed, coreutils, gawk, etc.
-
-
-## 🎯 Philosophy
-
-- Terminal-first, keyboard-driven workflow
-- Get up and running fast
-- Modular, understandable configuration — no hidden magic
-- LOW configuration (I use tmux a lot but 0 config for it) for improved portability
-- Dotfile hygiene - I yoinked the .zsh.d idea from a youtube video that I have 
-forgotten but would LOVE to credit. If someone knows the video on "the dot problem" 
-or something like that, please point that out to me and let me know!
+- 🚀 Zsh (搭配 Zap) — 插件管理器，打造干净、快速的 Shell
+- 🧠 Raycast — 快速启动器与自动化工具
+- 🪟 Aerospace — 平铺式窗口管理 (Mac 版的 i3)
+- 🧘 极简 Vim 配置 — 如果你想保持轻量
+- 🖋️ GNU Stow — 简单、模块化的 dotfile 管理
+- 🧰 基础 GNU 工具 — sed, coreutils, gawk 等
 
 
-### You may be asking, why astronvim? Aren't you a vim nerd who handles his own config
+## 🎯 设计理念
 
-Okay ... so, here's my thinking about astronvim.
-
-I have run my own vim configs for almost 10 years now. I love it. It's fun. It breaks a lot!
-
-I've come to some conclusions about **CONFIGURATION**:
-1. The less you configure things, the more portable your knowledge of the thing is.
-2. The less you configure things, the more you learn THE TOOL ITSELF, instead of YOUR CONFIGURATION of that tool
-3. Leverage Defaults and Leverage Community
-
-So I prefer to use defaults as much as possible OR leverage things maintained by a community.
-
-Astronvim is the latter. I keep 0 plugin, minimal configuration Vim too for lightweight editing.
-- together, these require next to no configuration on my part and give me 99% of the workflow I was used to with a home-grown config
-
-It feels, to me, as if the neovim community has converged on a mostly consistent set of tools and hotkeys 
-for the general flow of neovim as pseudo-IDE. I ran the Primeagen's Neovim setup tutorial + my own tweaks 
-for a few years, and it was great but eventually things broke. I just got tired of fixing my editor instead of 
-editing.
-
-Given, that I feel neovim as a pseudo-IDE has mostly converged ... most "neovim distributions" feel pretty close 
-to what I'd expect and what I was already using with my home-grown config.
-
-So Astronvim gives me what I expect and mostly already had, while off-loading maintenance to a community.
-
-I would, however, HIGHLY RECOMMEND, if you don't know Vim or, have never managed your own config, to run vanilla vim 
-as well as try managing your own config for a bit. You will learn things. Also read practical vim.
+- 终端优先，键盘驱动的工作流
+- 快速上手
+- 模块化、易懂的配置 —— 没有隐藏的魔法
+- 低配置（我经常使用 tmux，但对它几乎是 0 配置）以提高可移植性
+- Dotfile 卫生 - 我从一个 YouTube 视频里借用了 .zsh.d 的想法，但我忘了是哪个视频了，非常希望能注明出处。如果有人知道关于 "the dot problem" 或类似的视频，请指出来并告诉我！
 
 
-## 🔧 Installation
 
-### ✅ If you have Git
+## 🔧 安装
+
+### ✅ 如果你已经安装了 Git
 
 ```sh
 git clone https://github.com/NLaundry/MacAutoSetup.git ~/Projects/MacAutoSetup
@@ -64,69 +32,55 @@ cd ~/Projects/MacAutoSetup
 ./bootstrap.sh
 ```
 
-### 🌀 If you only have curl (fresh macOS install)
 
-```
-bash <(curl -fsSL https://raw.githubusercontent.com/NLaundry/MacAutoSetup/main/bootstrap-nogit.sh)
-```
+## 📦 安装内容
 
-This will:
-1. Install Xcode CLI tools (for Git)
-2. Install Homebrew
-3. Clone this repo
-4. Run the full setup
+Brewfile 涵盖了所有必需品：
 
-
-## 📦 What Gets Installed
-
-The Brewfile covers all the essentials:
-
-### 🧰 CLI Tools
+### 🧰 CLI 工具
 
 git, fzf, ripgrep, bat, htop, lazygit, lazysql, awscli, jq, gh, tmux, stow, neovim, kubectl, tailscale, coreutils, gnu-sed, findutils, gawk
 
-### 💻 GUI Apps
+### 💻 GUI 应用
 
-raycast, aerospace, ghostty, iterm2, visual-studio-code, docker, caffeine
+raycast, aerospace, tabby, visual-studio-code, docker, caffeine
 
-### 🖥️ Fonts
+### 🖥️ 字体
 
-JetBrains Mono Nerd Font (for beautiful glyphs and coding ligatures)
+JetBrains Mono Nerd Font (用于漂亮的图标和代码连字)
 
-### 🧪 Dev Environment
+### 🧪 开发环境
 
-python, pipx, node, nvm
+python, uv, node, nvm
 
 
-## 📁 Dotfiles & Config
+## 📁 Dotfiles 与配置
 
-Dotfiles are managed using GNU Stow.
+Dotfiles 使用 GNU Stow 进行管理。
 
-Directory structure:
+目录结构：
 
 ```
 dotfiles/
 ├── zsh/
-├── nvim/        # Minimal Neovim config
-├── vim/         # Classic Vim config (optional)
-├── aerospace/   # Tiling window manager config
-├── iterm2/
-├── ghostty/
+├── vim/         # 经典 Vim 配置 (可选)
+├── aerospace/   # 平铺式窗口管理器配置
+├── tabby/
 └── …
 ```
 
-Each folder maps to $HOME. For example:
+每个文件夹都映射到 `$HOME`。例如：
 
 ```
-stow –target=$HOME zsh nvim ghostty
+stow --target=$HOME zsh tabby
 ```
 
-creates symlinks for config files in your home directory.
+这会在你的主目录下创建配置文件的符号链接。
 
-## ✅ Result
+## ✅ 结果
 
-- Feels like Arch or Debian with i3, but polished for Mac
-- Astronvim or minimal Vim: pick your workflow
-- Tiling window control and keybindings
-- Clean terminal with Nerd Font and modern CLI tools
-- Shell and dev tools ready for Python, Node, AWS, and Kubernetes
+- 感觉像装了 i3 的 Arch 或 Debian，但针对 Mac 进行了打磨
+- 极简 Vim：选择你的工作流
+- 平铺式窗口控制和快捷键
+- 带有 Nerd Font 和现代 CLI 工具的干净终端
+- 为 Python, Node, AWS 和 Kubernetes 准备就绪的 Shell 和开发工具

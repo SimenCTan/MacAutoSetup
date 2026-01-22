@@ -9,6 +9,8 @@ brew "bat"
 brew "htop"
 brew "jq"
 brew "yq"
+# ACME client (Let's Encrypt / ZeroSSL etc.)
+brew "acme.sh"
 # brew "gh"
 brew "tmux"
 brew "stow"
@@ -38,8 +40,7 @@ cask "shottr"
 cask "datagrip"
 cask "postman"
 cask "fork"
-cask "google-cloud-sdk"
-cask "dotnet-sdk@9"
+cask "dotnet-sdk"
 cask "another-redis-desktop-manager"
 
 # Fonts
